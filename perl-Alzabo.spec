@@ -8,7 +8,7 @@ Summary:	Alzabo - a data modelling tool and RDBMS-OO mapper
 Summary(pl):	Alzabo - narzêdzie do modelowania danych i mapper RDBMS-OO
 Name:		perl-Alzabo
 Version:	0.86
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl

@@ -1,9 +1,9 @@
 #
 # Conditional build:
-%bcond_without	tests		# do not perform "make test"
+%bcond_without	tests	# do not perform "make test"
 #
 %include	/usr/lib/rpm/macros.perl
-%define	pdir	Alzabo
+%define		pdir	Alzabo
 Summary:	Alzabo - a data modelling tool and RDBMS-OO mapper
 Summary(pl):	Alzabo - narzêdzie do modelowania danych i mapper RDBMS-OO
 Name:		perl-Alzabo
@@ -33,9 +33,9 @@ BuildRequires:	perl-Tie-IxHash
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define _noautoreq	'perl(DBD::mysql)' 'perl(DBD::Pg)'
+%define		_noautoreq	'perl(DBD::mysql)' 'perl(DBD::Pg)'
 # FIXME: is this a proper directory?
-%define	alzabo_root_dir	%{_datadir}/alzabo
+%define		alzabo_root_dir	%{_datadir}/alzabo
 
 %description
 Alzabo is a two-fold program. Its first function is as a data modelling
@@ -52,7 +52,7 @@ DELETE, and UPDATE commands.
 
 To take it a step further, you could then aggregate a set of rows from
 different tables into a larger container object which could understand
-the logical relationship between these tables.  The Alzabo::MethodMaker
+the logical relationship between these tables. The Alzabo::MethodMaker
 module can be very helpful in this regard.
 
 %description -l pl
@@ -77,9 +77,9 @@ pomocny.
 
 cat >pld_config <<'EOF'
 s!"'CONFIG'"!(
-    root_dir        => '%{alzabo_root_dir}/',
-    mason_web_dir   => undef,
-    mason_extension => undef,
+	root_dir	=> '%{alzabo_root_dir}/',
+	mason_web_dir	=> undef,
+	mason_extension	=> undef,
 )!;
 EOF
 

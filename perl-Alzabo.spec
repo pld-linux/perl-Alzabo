@@ -8,7 +8,7 @@ Summary:	Alzabo - a data modelling tool and RDBMS-OO mapper
 Summary(pl):	Alzabo - narzêdzie do modelowania danych i mapper RDBMS-OO
 Name:		perl-Alzabo
 Version:	0.85
-Release:	1
+Release:	2
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
@@ -101,6 +101,9 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT%{alzabo_root_dir}
 install -d $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 cp -a eg/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
+
+# get rid of pod documentation.spec
+rm -f $RPM_BUILD_ROOT%{perl_vendorlib}/Alzabo/*.pod
 
 %clean
 rm -rf $RPM_BUILD_ROOT

@@ -4,7 +4,7 @@
 #
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Alzabo
-Summary:	Alzabo - A data modelling tool and RDBMS-OO mapper
+Summary:	Alzabo - a data modelling tool and RDBMS-OO mapper
 Summary(pl):	Alzabo - narzêdzie do modelowania danych i mapper RDBMS-OO
 Name:		perl-Alzabo
 Version:	0.82
@@ -22,12 +22,13 @@ BuildRequires:	perl-Class-Factory-Util >= 1.3
 BuildRequires:	perl-DBI >= 1.25
 BuildRequires:	perl-Exception-Class >= 0.97
 BuildRequires:	perl-Params-Validate >= 0.58
-BuildRequires:	perl-Storable >= 0.7
-BuildRequires:	perl-Test-Harness >= 1.26
 BuildRequires:	perl-Test-Pod
-BuildRequires:	perl-Test-Simple >= 0.47
 BuildRequires:	perl-Tie-IxHash
-BuildRequires:	perl-Time-HiRes
+# provided by perl-modules
+#BuildRequires:	perl-Storable >= 0.7
+#BuildRequires:	perl-Test-Harness >= 1.26
+#BuildRequires:	perl-Test-Simple >= 0.47
+#BuildRequires:	perl-Time-HiRes
 %endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)

@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define	pdir	Alzabo
 Summary:	Alzabo - A data modelling tool and RDBMS-OO mapper
-#Summary(pl):	
+Summary(pl):	Alzabo - narzêdzie do modelowania danych i mapper RDBMS-OO
 Name:		perl-Alzabo
 Version:	0.82
 Release:	1
@@ -14,8 +14,8 @@ License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{version}.tar.gz
 # Source0-md5:	b2de87a8d2a5b7a95f3f2f19abaaffad
-BuildRequires:	perl-devel >= 1:5.6
 BuildRequires:	perl-Module-Build
+BuildRequires:	perl-devel >= 1:5.6
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
 BuildRequires:	perl-Class-Factory-Util >= 1.3
@@ -34,11 +34,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %define _noautoreq	'perl(DBD::mysql)' 'perl(DBD::Pg)'
 # FIXME: is this a proper directory?
-%define	alzabo_root_dir	%{_datadir}/alzabo/
+%define	alzabo_root_dir	%{_datadir}/alzabo
 
 %description
 Alzabo is a two-fold program. Its first function is as a data modelling
-tool. Through either a schema creation interface or a custom perl program,
+tool. Through either a schema creation interface or a custom Perl program,
 you can create a set of schema, table, column, etc. objects that represent
 your data model. Alzabo is also capable of reverse engineering an existing
 data model.
@@ -54,15 +54,29 @@ different tables into a larger container object which could understand
 the logical relationship between these tables.  The Alzabo::MethodMaker
 module can be very helpful in this regard.
 
-# %description -l pl
-# TODO
+%description -l pl
+Alzabo to program do dwóch rzeczy. Pierwsz± funkcj± jest narzêdzie do
+modelowania danych. Poprzez interfejs do tworzenia schematu lub w³asny
+program w Perlu mo¿na tworzyæ zbiór obiektów schematów, tabel, kolumn
+itp. reprezentuj±cych model danych. Alzabo potrafi tak¿e wykonywaæ
+reverse engineering istniej±cego modelu danych.
+
+Druga funkcja to system mapowania RDBMS na obiekty. Po stworzeniu
+schematu mo¿na u¿yæ klas Alzabo::Runtime::Table i Alzabo::Runtime::Row
+do dostêpu do danych. Te klasy oferuj± wysokopoziomowy interfejs do
+takich operacji SQL jak SELECT, INSERT, DELETE czy UPDATE.
+
+Co wiêcej, mo¿na wtedy gromadziæ zbiór wierszy z ró¿nych tabel w
+wiêkszy obiekt kontenerowy, który mo¿e rozumieæ logiczne relacje
+pomiêdzy tabelami. Modu³ Alzabo::MethodMaker mo¿e byæ w tym bardzo
+pomocny.
 
 %prep
 %setup -q -n %{pdir}-%{version}
 
 cat >pld_config <<'EOF'
 s!"'CONFIG'"!(
-    root_dir        => '%alzabo_root_dir',
+    root_dir        => '%{alzabo_root_dir}/',
     mason_web_dir   => undef,
     mason_extension => undef,
 )!;
@@ -94,7 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes TODO
 %{perl_vendorlib}/*.pm
-%{perl_vendorlib}/%{pdir}
+%{perl_vendorlib}/Alzabo
 %{_mandir}/man3/*
 %{_examplesdir}/%{name}-%{version}
 %{alzabo_root_dir}

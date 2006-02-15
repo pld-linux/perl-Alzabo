@@ -7,13 +7,13 @@
 Summary:	Alzabo - a data modelling tool and RDBMS-OO mapper
 Summary(pl):	Alzabo - narzêdzie do modelowania danych i mapper RDBMS-OO
 Name:		perl-Alzabo
-Version:	0.86
-Release:	2
+Version:	0.87
+Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{version}.tar.gz
-# Source0-md5:	90f8db4f0e86b5959de48f6871efc963
+# Source0-md5:	cdbdca512aba503a999fc8151b39cdea
 BuildRequires:	perl-Module-Build
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -38,11 +38,11 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %define		alzabo_root_dir	%{_datadir}/alzabo
 
 %description
-Alzabo is a two-fold program. Its first function is as a data modelling
-tool. Through either a schema creation interface or a custom Perl program,
-you can create a set of schema, table, column, etc. objects that represent
-your data model. Alzabo is also capable of reverse engineering an existing
-data model.
+Alzabo is a two-fold program. Its first function is as a data
+modelling tool. Through either a schema creation interface or a custom
+Perl program, you can create a set of schema, table, column, etc.
+objects that represent your data model. Alzabo is also capable of
+reverse engineering an existing data model.
 
 Its second function is as a RDBMS to object mapping system. Once you
 have created a schema, you can use the Alzabo::Runtime::Table and
@@ -104,6 +104,7 @@ cp -a eg/* $RPM_BUILD_ROOT%{_examplesdir}/%{name}-%{version}
 
 # get rid of pod documentation.spec
 rm -f $RPM_BUILD_ROOT%{perl_vendorlib}/Alzabo/*.pod
+rm -f $RPM_BUILD_ROOT%{perl_vendorarch}/auto/Alzabo/.packlist
 
 %clean
 rm -rf $RPM_BUILD_ROOT

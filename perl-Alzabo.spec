@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Alzabo
 Summary:	Alzabo - a data modelling tool and RDBMS-OO mapper
-Summary(pl):	Alzabo - narzêdzie do modelowania danych i mapper RDBMS-OO
+Summary(pl.UTF-8):   Alzabo - narzÄ™dzie do modelowania danych i mapper RDBMS-OO
 Name:		perl-Alzabo
 Version:	0.8901
 Release:	1
@@ -56,21 +56,21 @@ different tables into a larger container object which could understand
 the logical relationship between these tables. The Alzabo::MethodMaker
 module can be very helpful in this regard.
 
-%description -l pl
-Alzabo to program do dwóch rzeczy. Pierwsz± funkcj± jest narzêdzie do
-modelowania danych. Poprzez interfejs do tworzenia schematu lub w³asny
-program w Perlu mo¿na tworzyæ zbiór obiektów schematów, tabel, kolumn
-itp. reprezentuj±cych model danych. Alzabo potrafi tak¿e wykonywaæ
-reverse engineering istniej±cego modelu danych.
+%description -l pl.UTF-8
+Alzabo to program do dwÃ³ch rzeczy. PierwszÄ… funkcjÄ… jest narzÄ™dzie do
+modelowania danych. Poprzez interfejs do tworzenia schematu lub wÅ‚asny
+program w Perlu moÅ¼na tworzyÄ‡ zbiÃ³r obiektÃ³w schematÃ³w, tabel, kolumn
+itp. reprezentujÄ…cych model danych. Alzabo potrafi takÅ¼e wykonywaÄ‡
+reverse engineering istniejÄ…cego modelu danych.
 
 Druga funkcja to system mapowania RDBMS na obiekty. Po stworzeniu
-schematu mo¿na u¿yæ klas Alzabo::Runtime::Table i Alzabo::Runtime::Row
-do dostêpu do danych. Te klasy oferuj± wysokopoziomowy interfejs do
+schematu moÅ¼na uÅ¼yÄ‡ klas Alzabo::Runtime::Table i Alzabo::Runtime::Row
+do dostÄ™pu do danych. Te klasy oferujÄ… wysokopoziomowy interfejs do
 takich operacji SQL jak SELECT, INSERT, DELETE czy UPDATE.
 
-Co wiêcej, mo¿na wtedy gromadziæ zbiór wierszy z ró¿nych tabel w
-wiêkszy obiekt kontenerowy, który mo¿e rozumieæ logiczne relacje
-pomiêdzy tabelami. Modu³ Alzabo::MethodMaker mo¿e byæ w tym bardzo
+Co wiÄ™cej, moÅ¼na wtedy gromadziÄ‡ zbiÃ³r wierszy z rÃ³Å¼nych tabel w
+wiÄ™kszy obiekt kontenerowy, ktÃ³ry moÅ¼e rozumieÄ‡ logiczne relacje
+pomiÄ™dzy tabelami. ModuÅ‚ Alzabo::MethodMaker moÅ¼e byÄ‡ w tym bardzo
 pomocny.
 
 %prep

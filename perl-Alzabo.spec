@@ -5,7 +5,7 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Alzabo
 Summary:	Alzabo - a data modelling tool and RDBMS-OO mapper
-Summary(pl.UTF-8):   Alzabo - narzędzie do modelowania danych i mapper RDBMS-OO
+Summary(pl.UTF-8):	Alzabo - narzędzie do modelowania danych i mapper RDBMS-OO
 Name:		perl-Alzabo
 Version:	0.8901
 Release:	1

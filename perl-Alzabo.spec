@@ -7,13 +7,14 @@
 Summary:	Alzabo - a data modelling tool and RDBMS-OO mapper
 Summary(pl.UTF-8):	Alzabo - narzędzie do modelowania danych i mapper RDBMS-OO
 Name:		perl-Alzabo
-Version:	0.8901
+Version:	0.90
 Release:	1
+Epoch:		1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-module/%{pdir}/%{pdir}-%{version}.tar.gz
-# Source0-md5:	51cb50f7af3a2719afa827106b4bcb1a
+# Source0-md5:	a05e1b8b00b75a6e9a0da87e85050e32
 URL:		http://search.cpan.org/dist/Alzabo/
 BuildRequires:	perl-Module-Build
 BuildRequires:	perl-devel >= 1:5.8.0
@@ -34,7 +35,7 @@ BuildRequires:	perl-Tie-IxHash
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_noautoreq	'perl(DBD::mysql)' 'perl(DBD::Pg)'
+%define		_noautoreq	'perl(DBD::mysql)' 'perl(DBD::Pg)' 'perl(Alzabo::.*)'
 # FIXME: is this a proper directory?
 %define		alzabo_root_dir	%{_datadir}/alzabo
 
